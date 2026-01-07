@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Year in Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+ 
+  <img src="https://edgestatic.azureedge.net/shared/cms/lrs1c69a1j/section-images/d78c583d3c034772813e42c16ba75fd7-png-w600.avif"
+       class="floating img-left parallax slow">
+
+  <img src="https://edgestatic.azureedge.net/shared/cms/lrs1c69a1j/section-images/584783989ebc4a5993ee608ab9a28a49-png-w600.avif"
+       class="floating img-right parallax medium">
+
+  <img src="https://edgestatic.azureedge.net/shared/cms/lrs1c69a1j/section-images/3802ee6e790a4521ad0a70254f520db0-png-w600.avif"
+       class="floating img-bottom parallax fast">
+
+  <img class="floating img1 parallax fast"
+       src="https://cdn.intuji.com/2022/08/Software-development-digital-transformation_comp-scaled-1.jpeg">
+
+  <!-- Glass Card -->
+  <div class="card parallax-card">
+    <div class="logo">
+      <img src="logo.png" alt="Empliz Innovations Logo" class="logo-img">
+    </div>
+
+    <h1>WELCOME TO<br>EMPLIZ INNOVATION PVT LTD</h1>
+
+    <button class="btn">Next</button>
+  </div>
+
+  <!-- Parallax Script (Desktop only) -->
+  <script>
+    if (window.matchMedia("(pointer: fine)").matches) {
+      const card = document.querySelector(".parallax-card");
+      const items = document.querySelectorAll(".parallax");
+
+      document.addEventListener("mousemove", (e) => {
+        const cx = window.innerWidth / 2;
+        const cy = window.innerHeight / 2;
+
+        const x = e.clientX - cx;
+        const y = e.clientY - cy; 
+
+        card.style.transform = `
+          translate(${x / 40}px, ${y / 40}px)
+          rotateX(${y / -80}deg)
+          rotateY(${x / 80}deg)
+        `;
+
+        items.forEach(item => {
+          let speed = 30;
+          if (item.classList.contains("slow")) speed = 60;
+          if (item.classList.contains("medium")) speed = 40;
+          if (item.classList.contains("fast")) speed = 20;
+
+          item.style.transform = `
+            translate(${x / speed}px, ${y / speed}px)
+          `;
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
