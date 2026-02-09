@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Employee Dashboard</title>
+
+<link rel="stylesheet" href="Emp.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="logo">Empliz Innovations</div>
+
+    <nav>
+        <ul class="nav-links">
+            <li>Dashboard</li>
+            <li>Employees</li>
+            <li class="logout">Logout</li>
+        </ul>
+    </nav>
+</header>
+
+<!-- MAIN -->
+<div class="container">
+
+    <!-- DASHBOARD CARDS -->
+    <section class="cards">
+
+        <div class="card">
+            <h3>Total Employees</h3>
+            <p id="totalEmployees">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Salary</h3>
+            <p id="totalSalary">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Highest Salary</h3>
+            <p id="highestSalary">0</p>
+        </div>
+
+    </section>
+
+
+    <!-- FORM CARD -->
+    <section class="form-card">
+
+        <h2>Add Employee</h2>
+
+        <form id="employeeForm">
+
+            <input type="text" id="name" placeholder="Employee Name" required>
+
+            <input type="text" id="department" placeholder="Department" required>
+
+            <input type="number" id="salary" placeholder="Salary" required>
+
+            <button type="submit">Add Employee</button>
+
+        </form>
+
+    </section>
+
+
+    <!-- TABLE CARD -->
+    <section class="table-card">
+
+        <h2>Employee List</h2>
+
+        <div class="table-wrapper">
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="employeeTable"></tbody>
+
+        </table>
+        </div>
+
+    </section>
+
+</div>
+
+<script src="Emp.js"></script>
+</body>
+</html>
