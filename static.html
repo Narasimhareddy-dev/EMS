@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Travel</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+line-height:1.6;
+background:#f7f9fc;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#0f172a;
+color:white;
+padding:15px 40px;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:16px;
+}
+
+/* SLIDER */
+
+.slider{
+position:relative;
+width:100%;
+height:520px;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:opacity 1s ease-in-out;
+}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.slide.active{
+opacity:1;
+}
+
+/* HERO TEXT */
+
+.hero-text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+text-align:center;
+background:rgba(0,0,0,0.5);
+padding:35px;
+border-radius:12px;
+}
+
+.hero-text h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero-text p{
+font-size:20px;
+margin-bottom:20px;
+}
+
+.btn{
+background:#ff7b00;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:5px;
+font-size:16px;
+}
+
+/* SECTION */
+
+section{
+padding:80px 60px;
+text-align:center;
+}
+
+/* ALTERNATE BACKGROUNDS */
+
+.about{
+background:linear-gradient(135deg,#e0f2fe,#f0f9ff);
+}
+
+.services{
+background:#ffffff;
+}
+
+.destinations{
+background:linear-gradient(135deg,#fdf2f8,#fce7f3);
+}
+
+.trips{
+background:#ffffff;
+}
+
+.reviews{
+background:linear-gradient(135deg,#ecfeff,#cffafe);
+}
+
+/* CARDS */
+
+.features{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.card{
+width:260px;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.1);
+background:white;
+transition:transform 0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+/* DESTINATION HOVER EFFECT */
+
+.destination-card{
+overflow:hidden;
+}
+
+.destination-card img{
+transition:transform 0.5s;
+}
+
+.destination-card:hover img{
+transform:scale(1.15);
+}
+
+/* TESTIMONIAL SLIDER */
+
+.testimonial-container{
+max-width:600px;
+margin:auto;
+position:relative;
+}
+
+.testimonial{
+display:none;
+font-size:18px;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.testimonial.active{
+display:block;
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+background:linear-gradient(135deg,#fff7ed,#ffedd5);
+}
+
+.newsletter input{
+padding:10px;
+width:250px;
+border:1px solid #ccc;
+border-radius:5px;
+margin-right:10px;
+}
+
+.newsletter button{
+padding:10px 20px;
+background:#ff7b00;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<h2>Travel Explorer</h2>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#destinations">Destinations</a></li>
+<li><a href="#trips">Trips</a></li>
+<li><a href="#reviews">Reviews</a></li>
+</ul>
+
+</nav>
+
+<!-- IMAGE SLIDER -->
+
+<div class="slider" id="home">
+
+<div class="slide active">
+<img src="https://swastiktours.com/wp-content/uploads/2024/04/22.webp">
+</div>
+
+<div class="slide">
+<img src="https://s3.india.com/wp-content/uploads/2024/06/Exploring-Araku-Valley.jpg##image/jpg">
+</div>
+
+<div class="slide">
+<img src="https://www.onthegotours.com/repository/Sandy-beach-in-Goa--India-Tours--On-The-Go-Tours-346991495533921.jpg">
+</div>
+
+<div class="hero-text">
+<h1>Explore The World</h1>
+<p>Discover beautiful destinations and unforgettable adventures</p>
+<a href="#trips" class="btn">Explore Trips</a>
+</div>
+
+</div>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<h2>Why Travel With Us</h2>
+
+<p>
+Travel Explorer helps you discover the best travel destinations across the world.
+We offer affordable packages, guided tours, comfortable accommodation,
+and unforgettable experiences.
+</p>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services">
+
+<h2>Our Travel Services</h2>
+
+<div class="features">
+
+<div class="card">
+<h3>Best Destinations</h3>
+<p>Explore the most beautiful travel locations.</p>
+</div>
+
+<div class="card">
+<h3>Affordable Packages</h3>
+<p>Budget friendly travel packages for everyone.</p>
+</div>
+
+<div class="card">
+<h3>Guided Tours</h3>
+<p>Professional guides for safe travel.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- DESTINATIONS -->
+
+<section id="destinations" class="destinations">
+
+<h2>Popular Destinations</h2>
+
+<div class="features">
+
+<div class="card destination-card">
+<img src="https://picsum.photos/300/200?paris">
+<h3>Paris</h3>
+</div>
+
+<div class="card destination-card">
+<img src="https://picsum.photos/300/200?bali">
+<h3>Bali</h3>
+</div>
+
+<div class="card destination-card">
+<img src="https://picsum.photos/300/200?maldives">
+<h3>Maldives</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- TRIPS -->
+
+<section id="trips" class="trips">
+
+<h2>Featured Travel Packages</h2>
+
+<div class="features">
+
+<div class="card">
+<h3>Goa Beach Trip</h3>
+<p>3 Days / 2 Nights</p>
+<p>₹8,000</p>
+</div>
+
+<div class="card">
+<h3>Manali Adventure</h3>
+<p>5 Days / 4 Nights</p>
+<p>₹15,000</p>
+</div>
+
+<div class="card">
+<h3>Kerala Backwaters</h3>
+<p>4 Days / 3 Nights</p>
+<p>₹12,000</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section id="reviews" class="reviews">
+
+<h2>What Our Travelers Say</h2>
+
+<div class="testimonial-container">
+
+<div class="testimonial active">
+<p>⭐⭐⭐⭐⭐</p>
+<p>"Amazing experience! Everything was perfectly organized."</p>
+<h4>- Rahul</h4>
+</div>
+
+<div class="testimonial">
+<p>⭐⭐⭐⭐⭐</p>
+<p>"Best travel package I ever booked. Highly recommended."</p>
+<h4>- Priya</h4>
+</div>
+
+<div class="testimonial">
+<p>⭐⭐⭐⭐⭐</p>
+<p>"Beautiful destinations and friendly guides."</p>
+<h4>- Arjun</h4>
+</div>
+
+</div>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+<h2>Subscribe for Travel Updates</h2>
+
+<br>
+
+<input type="email" placeholder="Enter your email">
+<button>Subscribe</button>
+
+</section>
+
+<footer>
+
+<p>© 2026 Travel Explorer | All Rights Reserved</p>
+
+</footer>
+
+<script>
+
+/* HERO IMAGE SLIDER */
+
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide(){
+slides.forEach(slide => slide.classList.remove("active"));
+index++;
+if(index >= slides.length){index = 0;}
+slides[index].classList.add("active");
+}
+
+setInterval(showSlide,3000);
+
+/* TESTIMONIAL SLIDER */
+
+let testimonials = document.querySelectorAll(".testimonial");
+let tindex = 0;
+
+function showTestimonial(){
+testimonials.forEach(t => t.classList.remove("active"));
+tindex++;
+if(tindex >= testimonials.length){tindex = 0;}
+testimonials[tindex].classList.add("active");
+}
+
+setInterval(showTestimonial,4000);
+
+</script>
+
+</body>
+</html>
